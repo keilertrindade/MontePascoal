@@ -9,9 +9,3 @@ function mostrarSenha() {
 	y.type = "password";
   }
 }
-
-function cadastrarEquipe(){
-		alert("Por Favor digite um e-mail válido");
-		return false;
-	}
-		
