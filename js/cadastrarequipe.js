@@ -10,6 +10,7 @@ function mostrarSenha() {
   }
 }
 
+
 function cadastrarEquipe(){
 	
 	var nome = document.getElementById("name-f5dd").value;
@@ -26,6 +27,21 @@ function cadastrarEquipe(){
 	var mas40 = document.getElementById("checkbox-0be0").checked;
 	var mas45 = document.getElementById("checkbox-8577").checked;
 	
-	alert("Cat: marcada: "+mas35 + "------- Categoria sem marcar: "+fem30);
+		if (!nome || !email || !senha || !csenha || !cidade || !estado){
+			alert("Por favor preencha todos os campos!");
+			return false;
+		}else if (fem30 == false && fem40 == false && fem50 == false && mas35 == false && mas40 == false && mas45 == false)
+		{
+			alert("Por favor selecione pelo menos uma categoria!");
+			return false;
+		}else if (csenha != senha){
+			alert("Senhas não são iguais. Por favor confira!");
+			return false;
+		}		
+		else {
+			alert("Tudo preenchido!"); //Adicionar ajax a partir daqui
+			return false; 
+		}
+	
 	
 }

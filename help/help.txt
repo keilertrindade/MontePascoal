@@ -1,0 +1,10 @@
+
+*Modelo:
+https://nicepage.com/pt/html5-template/preview/treinos-personalizados-91256?device=desktop
+
+*Reset de senha:
+http://talkerscode.com/webtricks/password-reset-system-using-php.php
+https://github.com/StartBootstrap/startbootstrap-sb-admin-2/blob/master/forgot-password.html
+https://www.google.com/search?client=firefox-b-d&q=reset+password+php 
+
+*
