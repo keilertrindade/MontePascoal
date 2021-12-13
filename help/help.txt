@@ -7,4 +7,15 @@ http://talkerscode.com/webtricks/password-reset-system-using-php.php
 https://github.com/StartBootstrap/startbootstrap-sb-admin-2/blob/master/forgot-password.html
 https://www.google.com/search?client=firefox-b-d&q=reset+password+php 
 
-*
+*Query Mysql:
+
+INSERT INTO `categorias`(`idcategorias`, `nome`) VALUES (1,'Masculino 35');
+INSERT INTO `categorias`(`idcategorias`, `nome`) VALUES (2,'Masculino 40');
+INSERT INTO `categorias`(`idcategorias`, `nome`) VALUES (3,'Masculino 45');
+INSERT INTO `categorias`(`idcategorias`, `nome`) VALUES (4,'Feminino 30');
+INSERT INTO `categorias`(`idcategorias`, `nome`) VALUES (5,'Feminino 40');
+INSERT INTO `categorias`(`idcategorias`, `nome`) VALUES (6,'Feminino 50');
+
+
+*Senhas com segurança:
+https://qastack.com.br/programming/30279321/how-to-use-phps-password-hash-to-hash-and-verify-passwords -> Comecei usando esse.

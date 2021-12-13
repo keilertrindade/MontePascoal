@@ -39,9 +39,23 @@ function cadastrarEquipe(){
 			return false;
 		}		
 		else {
-			alert("Tudo preenchido!"); //Adicionar ajax a partir daqui
-			return false; 
-		}
+			//alert("Tudo preenchido!"); //Adicionar ajax a partir daqui
+			//return false; 
 	
+	  $.ajax({
+	  url:'php/cadastrarEquipe.php',
+	  type:'POST',
+	  data:{'nome':nome,'email':email,'senha':senha,'cidade':cidade,'estado':estado,'fem30':fem30,'fem40':fem40,'fem50':fem50,
+	  'mas35':mas35,'mas40':mas40,'mas45':mas45,},
+      complete: function (response) {
+		//var dataResult = JSON.parse(response);
+		//alert("Cadastro Realizado com sucesso");
+		//window.location.href = "Login.html";
+      },
+      error: function () {
+          alert('Erro');
+      }
+  });
+}		
 	
 }
