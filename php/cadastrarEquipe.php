@@ -42,7 +42,6 @@ if ($mas45 == "true") {$mas45 = 1;}else {$mas45 = 0;}
 	if($conn->query($sql) === true){
     echo "Cadastro efetuado com sucesso. Por favor efetue o login para continuar.";
 	}
-	
 	else{
     echo "ERROR: Could not able to execute $sql. " . $conn->error; 
 }

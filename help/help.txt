@@ -19,3 +19,7 @@ INSERT INTO `categorias`(`idcategorias`, `nome`) VALUES (6,'Feminino 50');
 
 *Senhas com segurança:
 https://qastack.com.br/programming/30279321/how-to-use-phps-password-hash-to-hash-and-verify-passwords -> Comecei usando esse.
+
+
+*Login
+https://www.devmedia.com.br/criando-sessao-para-login-no-php/27347

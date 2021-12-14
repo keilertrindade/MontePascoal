@@ -50,7 +50,7 @@ function cadastrarEquipe(){
       complete: function (response) {
 		  alert(response.responseText);
 		//alert("Cadastro Realizado com sucesso");
-		  window.location.href = "Login.html";
+		  window.location.href = "Login.php";
       },
       error: function () {
           alert('Erro');

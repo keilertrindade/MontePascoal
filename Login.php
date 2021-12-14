@@ -81,14 +81,14 @@
     <section class="u-align-center u-clearfix u-section-1" id="sec-abb4">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-form u-login-control u-form-1">
-          <form action="#" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
+          <form action="open.php" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
             <div class="u-form-group u-form-name">
               <label for="username-a30d" class="u-label">E-mail</label>
               <input type="text" placeholder="Insira seu e-mail" id="username-a30d" name="username" class="u-grey-5 u-input u-input-rectangle u-input-1" required="">
             </div>
             <div class="u-form-group u-form-password">
               <label for="password-a30d" class="u-label">Senha</label>
-              <input type="text" placeholder="Insira sua senha" id="password-a30d" name="password" class="u-grey-5 u-input u-input-rectangle u-input-2" required="">
+              <input type="password" placeholder="Insira sua senha" id="password-a30d" name="password" class="u-grey-5 u-input u-input-rectangle u-input-2" required="">
             </div>
             <div class="u-form-checkbox u-form-group">
               <input type="checkbox" id="checkbox-a30d" name="remember" value="On">
