@@ -37,7 +37,7 @@ if(mysqli_num_rows($result) == 1){
 		mysqli_close($conn);
 		echo "<script>
 				alert('Bem Vindo!');
-				window.location.href='site.php';
+				window.location.href='painel.php';
 			 </script>";
 		
 	}
@@ -50,7 +50,7 @@ else{
   mysqli_close($conn);
 		echo "<script>
 		    	alert('Usuário ou senha inválidos!');
-				window.location.href='site.php';
+				window.location.href='painel.php';
 			 </script>";
   }
   

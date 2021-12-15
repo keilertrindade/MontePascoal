@@ -48,7 +48,7 @@
           </div>
           <div class="u-custom-menu u-nav-container">
             <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-light-1" href="Inicio.html" style="padding: 10px 20px;">Inicio</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-light-1" href="Login.html" style="padding: 10px 20px;">Login</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-light-1" href="login.php" style="padding: 10px 20px;">Login</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-light-1" href="CadastroEquipe.html" style="padding: 10px 20px;">Cadastre-se</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-light-1" href="Sobre.html" style="padding: 10px 20px;">Sobre</a>
 </li></ul>
@@ -58,7 +58,7 @@
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Inicio.html" style="padding: 10px 20px;">Inicio</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Login.html" style="padding: 10px 20px;">Login</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="login.php" style="padding: 10px 20px;">Login</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="CadastroEquipe.html" style="padding: 10px 20px;">Cadastre-se</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Sobre.html" style="padding: 10px 20px;">Sobre</a>
 </li></ul>
