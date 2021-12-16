@@ -19,7 +19,7 @@ $senha = $_POST['password'];
 $sql = "SELECT * FROM `equipe`
 WHERE `email` = '$login'";
 
-$sqlatletas = "SELECT idequipe, nome FROM `equipe`";
+$sqlatletas = "SELECT idequipe,nome FROM `equipe`";
 
 /* Logo abaixo temos um bloco com if e else, verificando se a variável $result foi
 bem sucedida, ou seja se ela estiver encontrado algum registro idêntico o seu valor

@@ -20,9 +20,14 @@ $id = $_SESSION['id'];
 $nome = $_SESSION['nome'];
 $atletas = $_SESSION['atletas'];
 
-//print_r ($_SESSION);
-var_dump($_SESSION['list'][4]);
-//echo $_SESSION['list'];
+/*print_r ($_SESSION);
+var_dump($_SESSION['list'][1]);
+$x = $_SESSION['list'][1];
+$y = $_SESSION['list'][0];
+var_dump($x['nome']);
+echo $x['nome'];
+echo $y['nome'];*/
+
 ?> 
   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +37,7 @@ var_dump($_SESSION['list'][4]);
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <title>Painel</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="painel.css" media="screen">
+	<link rel="stylesheet" href="painel.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
 	<script class="u-script" type="text/javascript" src="js/painel.js" defer=""></script>
@@ -136,8 +141,11 @@ var atletas =  "<?php echo $atletas;?>";
 						  
 						  <?php
 							// ciclo para percorrer os elementos de um array
+							$cont = 0;
 							foreach($_SESSION['list'] as $idequipe => $nome) {
-							echo '<option value="'.$id.'">'.$nome.' </option>';
+								$temp = $_SESSION['list'][$cont];
+							echo '<option value="'.$temp['idequipe'].'">'.$temp['nome'].' </option>';
+							$cont++;
 							}
 							?>
 						  <!--<option value="volvo">Volvo</option>
