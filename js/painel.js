@@ -1,9 +1,6 @@
 //var idequipe;
 
 function carregar(){
-	
-	document.getElementById("textobemvindo").innerHTML = "Texto";
-	
 }
 
 
@@ -49,9 +46,34 @@ function editarEquipe(){
 	
 }
 
-function cadastarAtleta(){
-	alert("cadastrarAtleta");
+function cadastarAtleta(idequipestring, numatletastring){
+	
+	var idequipe = parseInt(idequipestring);
+	var numatleta = parseInt(numatletastring);
+
+
+	if (numatleta == 20){
+		alert("Você já cadastrou o máximo de atletas permitidos. Por favor exclua ou edit um dos já cadastrados.");
+	}else{
+		window.location.href = "cadastroAtleta.php";		
+	 /* $.ajax({
+	  url:'cadastroAtleta.php',
+	  type:'POST',
+	  data:{'idequipe':idequipe,'numatleta':numatleta},
+      complete: function (response) {
+		  alert(response.responseText);
+		//alert("Cadastro Realizado com sucesso");
+		window.location.href = "painel.php";
+      },
+      error: function () {
+          alert('Erro');
+      }
+  }); */
+		
+	}
+
 }
+
 
 function editarAtleta(){
 	alert("editarAtleta");

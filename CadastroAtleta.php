@@ -11,10 +11,21 @@
 <link rel="stylesheet" href="CadastroAtleta.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+	<script class="u-script" type="text/javascript" src="js/cadastroAtleta.js" defer=""></script>
+	<script class="u-script" type="text/javascript" src="js/jquery-3.6.0.min.js" defer=""></script>
     <meta name="generator" content="Nicepage 4.1.0, nicepage.com">
     <link rel="icon" href="images/favicon.png">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     
+	<?php
+	session_start();
+	if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
+{
+  header('location:Login.php');
+ }
+	$atletas = $_SESSION['atletas'];
+	$id = $_SESSION['id']; 
+	?>
     
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -40,19 +51,19 @@
   <body class="u-body">
     <section class="u-clearfix u-section-1" id="sec-afae">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-form u-form-1">
-          <form action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
+        <form class="u-form u-form-1" method="POST" action="php/cadastrarAtleta.php" enctype="multipart/form-data"">
+          <div class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
             <div class="u-form-group u-form-name">
               <label for="name-f5dd" class="u-label">Nome do Atleta</label>
-              <input type="text" id="name-f5dd" name="nomeatleta" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+              <input type="text" id="name-f5dd" name="nomeatleta" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
             </div>
             <div class="u-form-group">
-              <label for="email-f5dd" class="u-label">RG</label>
-              <input placeholder="Apenas Números" id="email-f5dd" name="rg" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" type="text">
+              <label for="rg-f5dd" class="u-label">RG</label>
+              <input placeholder="Apenas Números" id="rg-f5dd" name="rg" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" type="number" min="0" step="1">
             </div>
             <div class="u-form-date u-form-group u-form-group-3">
               <label for="date-6fc0" class="u-label">Data de Nascimento</label>
-              <input type="date" placeholder="DD/MM/YYYY" id="date-6fc0" name="datanascimento" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+              <input type="date" placeholder="DD/MM/YYYY" id="date-6fc0" name="datanascimento" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
             </div>
             <div class="u-form-group u-form-select u-form-group-4">
               <label for="select-a32d" class="u-label">Posição</label>
@@ -64,23 +75,20 @@
                   <option value="Armador Esquerdo">Armador Esquerdo</option>
                   <option value="Ponta Direito">Ponta Direito</option>
                   <option value="Ponta Esquerdo">Ponta Esquerdo</option>
-                  <option value="Pivô">Pivô</option>
+                  <option value="Pivo">Pivô</option>
                 </select>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
             </div>
             <div class="u-form-group u-form-group-5">
               <label for="text-1751" class="u-label">Foto</label>
-              <input type="file" placeholder="" id="text-1751" name="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+              <input type="file" accept="image/*" id="foto-1751" name="foto-1751" required="required" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
             </div>
             <div class="u-align-left u-form-group u-form-submit">
-              <a href="#" class="u-btn u-btn-submit u-button-style">Cadastrar</a>
+              <a class="u-btn u-btn-submit u-button-style">Cadastrar</a>
               <input type="submit" value="submit" class="u-form-control-hidden">
             </div>
-            <div class="u-form-send-message u-form-send-success"> Obrigado! A sua mensagem foi enviada. </div>
-            <div class="u-form-send-error u-form-send-message"> Não foi possível enviar a sua mensagem. Por favor, corrija os erros e tente novamente. </div>
-            <input type="hidden" value="" name="recaptchaResponse">
-          </form>
+            </form>
         </div>
       </div>
     </section>

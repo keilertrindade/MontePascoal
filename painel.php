@@ -64,7 +64,7 @@ var atletas =  "<?php echo $atletas;?>";
     <meta property="og:type" content="website">
   </head>
   <body class="u-body"><header class="u-clearfix u-header u-header" id="sec-1947"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1">
+        <a href="inicio.html" class="u-image u-logo u-image-1">
           <img src="images/default-logo.png" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
@@ -101,9 +101,9 @@ var atletas =  "<?php echo $atletas;?>";
       <div class="u-clearfix u-sheet u-sheet-1">
         <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1" onclick="sair()" >SAIR</a>
         <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-2" onclick="editarEquipe()">Editar equipe</a>
-        <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-3" onclick="cadastarAtleta()">Cadastrar novo atleta</a>
+        <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-3" onclick="cadastarAtleta(idequipe,atletas)">Cadastrar novo atleta</a>
         <h4 class="u-text u-text-1" id="textobemvindo">
-          <span style="font-size: 1.25rem;">Bem Vindo <?php echo $nome; ?>!&nbsp;<br><br>Atletas cadastrados: <?php echo $atletas;?>&nbsp; 
+          <span style="font-size: 1.25rem;">Bem Vindo <?php echo $nome; ?>!&nbsp;<br><br><?php echo $_SESSION['id'];?>&nbsp;ATLETA(S) CADASTRADOS.  
           </span>
           <br>
         </h4>
@@ -120,8 +120,17 @@ var atletas =  "<?php echo $atletas;?>";
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
                 <div class="u-container-layout u-valign-bottom-sm u-valign-bottom-xs u-container-layout-2">
                   <h4 class="u-text u-text-default u-text-1">Atletas Inscritos:</h4>
-                  <ul class="u-text u-text-2">
-                    <li>
+                  <ul class="u-text u-text-2">                  
+					<?php
+							// ciclo para percorrer os elementos de um array
+							$cont = 0;
+							foreach($_SESSION['list'] as $idequipe => $nome) {
+								$temp = $_SESSION['list'][$cont];
+							echo '<li><div class="class u-list-icon"></div>'.$temp['nome'].'</li>';
+							$cont++;
+						}
+					?>	
+				<!--<li>
                       <div class="class u-list-icon"></div>Sample Item 1
                     </li>
                     <li>
@@ -129,7 +138,7 @@ var atletas =  "<?php echo $atletas;?>";
                     </li>
                     <li>
                       <div class="class u-list-icon"></div>Sample Item 3
-                    </li>
+                    </li> -->
                   </ul>
                   <div class="u-form u-form-1">
                     <div action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">

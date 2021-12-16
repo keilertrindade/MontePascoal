@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `MontePascoal`.`atletas` (
   `idatletas` INT NOT NULL AUTO_INCREMENT,
   `equipe_idequipe` INT NOT NULL,
   `nome` VARCHAR(45) NULL,
-  `apelido` VARCHAR(45) NULL,
+  `posicao` VARCHAR(20) NULL,
   `datanascimento` DATE NULL,
   `rg` VARCHAR(15) NULL,
   `foto` VARCHAR(255) NULL,
