@@ -19,7 +19,7 @@ $senha = $_POST['password'];
 $sql = "SELECT * FROM `equipe`
 WHERE `email` = '$login'";
 
-$sqlatletas = "SELECT idequipe,nome FROM `equipe`";
+
 
 /* Logo abaixo temos um bloco com if e else, verificando se a variável $result foi
 bem sucedida, ou seja se ela estiver encontrado algum registro idêntico o seu valor
@@ -34,15 +34,18 @@ $row = mysqli_fetch_array($result);
 
 if(mysqli_num_rows($result) == 1){
 	if (password_verify($senha,$row['senha'])){
-	
-		$result2 = $conn->query($sqlatletas);
-	    $atletasequipe = $result2->fetch_all(MYSQLI_ASSOC);
-	
+		
 		$_SESSION['login'] = $login;
 		$_SESSION['senha'] = $senha;
 		$_SESSION['id'] = $row['idequipe'];
 		$_SESSION['nome'] = $row[3];
 		$_SESSION['atletas'] = $row[6];
+		
+		$idequipe = (int)$_SESSION['id'];
+		
+		$sqlatletas = "SELECT * FROM `atletas` WHERE equipe_idequipe=$idequipe";
+		$result2 = $conn->query($sqlatletas);
+	    $atletasequipe = $result2->fetch_all(MYSQLI_ASSOC);
 		
 		$_SESSION['list'] = $atletasequipe;
 		

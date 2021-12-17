@@ -23,3 +23,6 @@ https://qastack.com.br/programming/30279321/how-to-use-phps-password-hash-to-has
 
 *Login
 https://www.devmedia.com.br/criando-sessao-para-login-no-php/27347
+
+*Gerar PDF baseado em html
+https://tcpdf.org/

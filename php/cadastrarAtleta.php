@@ -4,7 +4,6 @@
 //	var_dump($_POST);
 //	var_dump($_FILES);
 //	var_dump($_SESSION);
-//	var_dump($_FILES['uimage']);
 
 	$servername="localhost:3308";
 	$username="root";
@@ -23,6 +22,7 @@ $rg = $conn -> real_escape_string ($_POST['rg']);
 $data = $conn -> real_escape_string ($_POST['datanascimento']);
 $posicao = $conn -> real_escape_string ($_POST['select']);
 $idequipe = (int)$_SESSION['id'];
+$qtdatleta = (int)$_SESSION['atletas'];
 
 //echo $nome;
 
@@ -62,9 +62,6 @@ if (file_exists($target_file)) {
   $uploadOk = 0;
 }
 
-
-
-
 //$target_file = $target_dir . basename($_FILES["foto-1751"]["name"]);
 
 // Check if $uploadOk is set to 0 by an error
@@ -78,32 +75,35 @@ if ($uploadOk == 0) {
 	if($conn->query($sql) === true){
 		$idatleta = (string)$conn->insert_id;
 		$target = $target_dir . $idatleta . "-" . basename($_FILES["foto-1751"]["name"]);
-		
-		$recnumatleta = "SELECT numeroatletas FROM equipe WHERE  idequip = $idequipe";
-		$numatleta = (int)$conn->query($recnumatleta);
-		
+		$qtdatleta++;
+				
 		//var_dump($numatleta);
 
-		$numatleta++;
-		$updatenumatleta = "UPDATE equipe SET numeroatletas='$numatleta' WHERE idequipe=$idequipe";
+		$updatenumatleta = "UPDATE equipe SET numeroatletas='$qtdatleta' WHERE idequipe=$idequipe";
 		$conn->query($updatenumatleta);
-		$_SESSION['id'] = $numatleta;
+		$_SESSION['atletas'] = $qtdatleta;
+		
+		$sqlatletas = "SELECT nome,posicao FROM `atletas` WHERE equipe_idequipe=$idequipe";
+		$result2 = $conn->query($sqlatletas);
+	    $atletasequipe = $result2->fetch_all(MYSQLI_ASSOC);
+		
+		$_SESSION['list'] = $atletasequipe;
+		
 	
     if (move_uploaded_file($_FILES["foto-1751"]["tmp_name"], $target)) {
 		$update = "UPDATE atletas SET foto='$target' WHERE idatletas=$idatleta";
 		if ($conn->query($update) === true){
-			
+		
 			echo "<script>
 				alert('Cadastro Realizado com sucesso!');
 				window.location.href='../painel.php';
 			 </script>";
-			
-		}   
+	}   
   } else {
     echo "Sorry, there was an error uploading your file.";
-  }
-    // echo "Cadastro efetuado com sucesso. Por favor efetue o login para continuar.";
+		}
 	}
+	
 }
 
 mysqli_close($conn);

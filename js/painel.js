@@ -5,7 +5,27 @@ function carregar(){
 
 
 function sair() {
-alert("logoff");
+var sair = confirm("Você gostaria de sair do sistema ?");
+if (sair == true){
+	  $.ajax({
+	  url:'php/sair.php',
+	  type:'POST',
+	  data:{'acao':'sair'}, 
+	  complete: function (response) {
+		alert(response.responseText);
+		window.location.href='index.html';
+		//alert("Cadastro Realizado com sucesso");
+		//window.location.href = "Login.php";
+      },
+      error: function () {
+          alert('Erro');
+      }
+  });
+}
+else {
+	return false;
+}
+
 }
 
 

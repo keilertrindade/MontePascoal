@@ -19,6 +19,7 @@ $logado = $_SESSION['login'];
 $id = $_SESSION['id'];
 $nome = $_SESSION['nome'];
 $atletas = $_SESSION['atletas'];
+$lista = $_SESSION['list'];
 
 /*print_r ($_SESSION);
 var_dump($_SESSION['list'][1]);
@@ -27,6 +28,8 @@ $y = $_SESSION['list'][0];
 var_dump($x['nome']);
 echo $x['nome'];
 echo $y['nome'];*/
+
+
 
 ?> 
   
@@ -57,7 +60,8 @@ echo $y['nome'];*/
 <script type="text/javascript">
 var idequipe = "<?php echo $id;?>";
 var nomeequipe = "<?php echo $nome;?>";
-var atletas =  "<?php echo $atletas;?>";
+var atletas = "<?php echo $atletas;?>";
+//var lista = "<?php echo $atletas;?>";
 </script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Página Inicial">
@@ -99,11 +103,10 @@ var atletas =  "<?php echo $atletas;?>";
       </div></header>
     <section class="u-clearfix u-section-1" id="sec-cb09">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1" onclick="sair()" >SAIR</a>
-        <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-2" onclick="editarEquipe()">Editar equipe</a>
+        <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1" onclick="sair()">SAIR</a>
         <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-3" onclick="cadastarAtleta(idequipe,atletas)">Cadastrar novo atleta</a>
         <h4 class="u-text u-text-1" id="textobemvindo">
-          <span style="font-size: 1.25rem;">Bem Vindo <?php echo $nome; ?>!&nbsp;<br><br><?php echo $_SESSION['id'];?>&nbsp;ATLETA(S) CADASTRADOS.  
+          <span style="font-size: 1.25rem;">Bem Vindo <?php echo $nome; ?>!&nbsp;<br><br><?php echo $_SESSION['atletas'];?>&nbsp;ATLETA(S) CADASTRADOS.  
           </span>
           <br>
         </h4>
@@ -122,52 +125,38 @@ var atletas =  "<?php echo $atletas;?>";
                   <h4 class="u-text u-text-default u-text-1">Atletas Inscritos:</h4>
                   <ul class="u-text u-text-2">                  
 					<?php
-							// ciclo para percorrer os elementos de um array
+							//ciclo para percorrer os elementos de um array
 							$cont = 0;
 							foreach($_SESSION['list'] as $idequipe => $nome) {
 								$temp = $_SESSION['list'][$cont];
-							echo '<li><div class="class u-list-icon"></div>'.$temp['nome'].'</li>';
+							echo '<li><div class="class u-list-icon"></div>'.$temp['nome'].'&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; '.$temp['posicao'].'</li>';
 							$cont++;
 						}
 					?>	
-				<!--<li>
-                      <div class="class u-list-icon"></div>Sample Item 1
-                    </li>
-                    <li>
-                      <div class="class u-list-icon"></div>Sample Item 2
-                    </li>
-                    <li>
-                      <div class="class u-list-icon"></div>Sample Item 3
-                    </li> -->
                   </ul>
-                  <div class="u-form u-form-1">
-                    <div action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
-                      <input type="hidden" id="siteId" name="siteId" value="84905310">
-                      <input type="hidden" id="pageId" name="pageId" value="48984769">
+                <!--  <div class="u-form u-form-1">
+                    <div class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
                       <div class="u-form-group u-form-name">
                         <label for="name-f290" class="u-form-control-hidden u-label"></label>
-                        <select type="select" placeholder="Insira seu Nome" id="name-f290" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
-						  
-						  <?php
-							// ciclo para percorrer os elementos de um array
+                        <select type="select" id="name-f290" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+						 
+						  /*  <?php
+							 //ciclo para percorrer os elementos de um array
 							$cont = 0;
 							foreach($_SESSION['list'] as $idequipe => $nome) {
 								$temp = $_SESSION['list'][$cont];
-							echo '<option value="'.$temp['idequipe'].'">'.$temp['nome'].' </option>';
+							echo '<option value="'.$temp['idatletas'].'">'.$temp['nome'].'</option>';
 							$cont++;
 							}
-							?>
-						  <!--<option value="volvo">Volvo</option>
-						  <option value="saab">Saab</option>  idequipe - nome;
-						  <option value="fiat">Fiat</option>
-						  <option value="audi">Audi</option>	-->	  
+							?> */
 						</select>
                       </div>
                       <div class="u-align-center u-form-group u-form-submit">
                         <a class="u-btn u-btn-submit u-button-style" onclick="editarAtleta()">Editar Atleta</a>
+						<input type="button" class="u-form-control-hidden">
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>

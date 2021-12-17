@@ -6,7 +6,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>CadastroAtleta</title>
+    <title>EditarAtleta</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
 <link rel="stylesheet" href="CadastroAtleta.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
@@ -16,17 +16,17 @@
     <meta name="generator" content="Nicepage 4.1.0, nicepage.com">
     <link rel="icon" href="images/favicon.png">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
-    
-	<?php
+
+<?php
 	session_start();
-	if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
-{
-  header('location:Login.php');
- }
-	$atletas = $_SESSION['atletas'];
-	$id = $_SESSION['id']; 
-	?>
-    
+ 
+	
+	$var = $_POST['atletaid'];
+	var_dump($var);
+	
+?>
+   
+
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -51,7 +51,7 @@
   <body class="u-body">
     <section class="u-clearfix u-section-1" id="sec-afae">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <form class="u-form u-form-1" method="POST" action="php/cadastrarAtleta.php" enctype="multipart/form-data">
+        <form class="u-form u-form-1" method="POST" action="php/cadastrarAtleta.php" enctype="multipart/form-data"">
           <div class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
             <div class="u-form-group u-form-name">
               <label for="name-f5dd" class="u-label">Nome do Atleta</label>
