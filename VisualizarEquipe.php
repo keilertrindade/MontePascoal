@@ -1,172 +1,149 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;">
-  <head>
+<html style="font-size: 16px;" lang="pt-BR">
+<head>
   
 <?php
-/* esse bloco de código em php verifica se existe a sessão, pois o usuário pode
-simplesmente não fazer o login e digitar na barra de endereço do seu navegador
-o caminho para a página principal do site (sistema), burlando assim a obrigação de
-fazer um login, com isso se ele não estiver feito o login não será criado a session,
-então ao verificar que a session não existe a página redireciona o mesmo
- para a index.php.*/
-session_start();
-if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
-{
-  header('location:Login.php');
- }
-
-$logado = $_SESSION['login'];
-$id = $_SESSION['id'];
-$nome = $_SESSION['nome'];
-$atletas = $_SESSION['atletas'];
-$lista = $_SESSION['list'];
-
-/*print_r ($_SESSION);
-var_dump($_SESSION['list'][1]);
-$x = $_SESSION['list'][1];
-$y = $_SESSION['list'][0];
-var_dump($x['nome']);
-echo $x['nome'];
-echo $y['nome'];*/
+include_once('php/gerarFichas.php');
 
 
-
-?> 
+?>
   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Painel</title>
+    <title>VisualizarEquipe</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
-	<link rel="stylesheet" href="painel.css" media="screen">
+    <link rel="stylesheet" href="nicepage.css" media="print">
+<link rel="stylesheet" href="VisualizarEquipe.css" media="screen">
+<link rel="stylesheet" href="VisualizarEquipe.css" media="print">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-	<script class="u-script" type="text/javascript" src="js/painel.js" defer=""></script>
-	<link rel="icon" href="images/favicon.png">
     <meta name="generator" content="Nicepage 4.1.0, nicepage.com">
+    <link rel="icon" href="images/favicon.png">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     
     
-    
-    <script type="application/ld+json">{
+<script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
-		"name": "",
-		"logo": "images/default-logo.png"
+		"name": "Monte Pascoal",
+		"logo": "images/default-logo.png",
+		"sameAs": [
+				"https://www.instagram.com/cdmontepascoalhandebol/",
+				"https://www.facebook.com/keiler.trindade/",
+				"https://twitter.com/keilertrindade",
+				"https://www.instagram.com/keilertrindade"
+		]
 }</script>
-
 <script type="text/javascript">
-var idequipe = "<?php echo $id;?>";
-var nomeequipe = "<?php echo $nome;?>";
-var atletas = "<?php echo $atletas;?>";
-//var lista = "<?php echo $atletas;?>";
+window.onload = function(){
+	
+//window.location.reload(true);
+	
+var fem30 = parseInt("<?php echo $_SESSION['fem30'];?>");
+if (fem30 == 1){document.getElementById("checkbox-1dea").checked = true};
+
+var fem40 = parseInt("<?php echo $_SESSION['fem40'];?>");
+if (fem40 == 1){document.getElementById("checkbox-18e2").checked = true};
+
+var fem50 = parseInt("<?php echo $_SESSION['fem50'];?>");
+if (fem50 == 1){document.getElementById("checkbox-a07d").checked = true};
+
+var mas35 = parseInt("<?php echo $_SESSION['mas35'];?>");
+if (mas35 == 1){document.getElementById("checkbox-5669").checked = true};
+
+var mas40 = parseInt("<?php echo $_SESSION['mas40'];?>");
+if (mas40 == 1){document.getElementById("checkbox-0be0").checked = true};
+
+var mas45 = parseInt("<?php echo $_SESSION['mas45'];?>");
+if (mas45 == 1){document.getElementById("checkbox-8577").checked = true};
+}
+
+
+
+window.onunload = function(){
+	document.getElementById("checkbox-1dea").checked = false;
+	document.getElementById("checkbox-18e2").checked = false;
+	document.getElementById("checkbox-a07d").checked = false;
+	document.getElementById("checkbox-5669").checked = false;
+	document.getElementById("checkbox-0be0").checked = false;
+	document.getElementById("checkbox-8577").checked = false;
+}
+
 </script>
+
+
+
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Página Inicial">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VisualizarEquipe">
+    <meta name="twitter:description" content="Monte Pascoal">
+    <meta property="og:title" content="VisualizarEquipe">
+    <meta property="og:description" content="">
     <meta property="og:type" content="website">
   </head>
-  <body class="u-body"><header class="u-clearfix u-header u-header" id="sec-1947"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="inicio.html" class="u-image u-logo u-image-1">
-          <img src="images/default-logo.png" class="u-logo-image u-logo-image-1">
-        </a>
-        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
-          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
-            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-</symbol>
-</defs></svg>
-            </a>
-          </div>
-          <div class="u-nav-container">
-            <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Inicio.html" style="padding: 10px 20px;">Inicio</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="login.php" style="padding: 10px 20px;">Login</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="CadastroEquipe.html" style="padding: 10px 20px;">Cadastre-se</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Sobre.html" style="padding: 10px 20px;">Sobre</a>
-</li></ul>
-          </div>
-          <div class="u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-inner-container-layout u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Página-Inicial.html">Página Inicial</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Sobre.html">Sobre</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html">Contact</a>
-</li></ul>
-              </div>
-            </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-          </div>
-        </nav>
-      </div></header>
-    <section class="u-clearfix u-section-1" id="sec-cb09">
+  <body class="u-body"><header class="u-align-center-sm u-align-center-xs u-clearfix u-header u-header" id="sec-c7f0"></header>
+    <section class="u-clearfix u-section-1" id="sec-afae">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1" onclick="sair()">SAIR</a>
-        <a class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-3" onclick="cadastarAtleta(idequipe,atletas)">Cadastrar novo atleta</a>
-        <h4 class="u-text u-text-1" id="textobemvindo">
-          <span style="font-size: 1.25rem;">Bem Vindo <?php echo strtoupper($nome); ?>!&nbsp;<br><br><?php echo $_SESSION['atletas'];?>&nbsp;ATLETA(S) CADASTRADOS.  
-          </span>
-          <br>
-        </h4>
-      </div>
-    </section>
-    <section class="u-clearfix u-section-2" id="sec-bd8d">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="695" data-image-height="410">
-                <div class="u-container-layout u-container-layout-1"></div>
-              </div>
-              <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
-                <div class="u-container-layout u-valign-bottom-sm u-valign-bottom-xs u-container-layout-2">
-                  <h4 class="u-text u-text-default u-text-1">Atletas Inscritos:</h4>
-                  <ul class="u-text u-text-2">                  
-					<?php
-							//ciclo para percorrer os elementos de um array
-							$cont = 0;
-							foreach($_SESSION['list'] as $idequipe => $nome) {
-								$temp = $_SESSION['list'][$cont];
-							echo '<li><div class="class u-list-icon"></div>'.$temp['nome'].'&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; '.$temp['posicao'].'</li>';
-							$cont++;
-						}
-					?>	
-                  </ul>
-                <!--  <div class="u-form u-form-1">
-                    <div class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
-                      <div class="u-form-group u-form-name">
-                        <label for="name-f290" class="u-form-control-hidden u-label"></label>
-                        <select type="select" id="name-f290" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-						 
-						  /*  <?php
-							 //ciclo para percorrer os elementos de um array
-							$cont = 0;
-							foreach($_SESSION['list'] as $idequipe => $nome) {
-								$temp = $_SESSION['list'][$cont];
-							echo '<option value="'.$temp['idatletas'].'">'.$temp['nome'].'</option>';
-							$cont++;
-							}
-							?> */
-						</select>
-                      </div>
-                      <div class="u-align-center u-form-group u-form-submit">
-                        <a class="u-btn u-btn-submit u-button-style" onclick="editarAtleta()">Editar Atleta</a>
-						<input type="button" class="u-form-control-hidden">
-                      </div>
-                    </div>
-                  </div> -->
-                </div>
-              </div>
+        <div class="u-form u-form-1">
+          <div action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
+            <div class="u-form-group u-form-name">
+              <label for="name-f5dd" class="u-label">Nome da Equipe</label>
+              <input type="text" id="name-f5dd" name="nomeequipe" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" value= "<?php echo $_SESSION['equipenome'];?>">
+            </div>
+            <div class="u-form-email u-form-group">
+              <label for="email-f5dd" class="u-label">E-Mail</label>
+              <input type="email" id="email-f5dd" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" value= "<?php echo $_SESSION['equipeemail'];?>">
+            </div>
+            <div class="u-form-group u-form-group-3">
+              <label for="text-bc4d" class="u-label">Cidade</label>
+              <input type="text" id="text-bc4d" name="cidade" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" value= "<?php echo $_SESSION['equipecidade'];?>">
+            </div>
+            <div class="u-form-group u-form-group-4">
+              <label for="text-8ec8" class="u-label">Estado</label>
+              <input type="text" id="text-8ec8" name="estado" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" value= "<?php echo $_SESSION['equipeestado'];?>">
+            </div>
+            <div class="u-form-checkbox u-form-group u-form-group-5">
+              <input type="checkbox" id="checkbox-1dea" name="feminino30" value="On">
+              <label for="checkbox-1dea" class="u-label">Feminino&nbsp; 30+</label>
+            </div>
+            <div class="u-form-checkbox u-form-group u-form-group-6">
+              <input type="checkbox" id="checkbox-5669" name="masculino35" value="On">
+              <label for="checkbox-5669" class="u-label">Masculino 35+</label>
+            </div>
+            <div class="u-form-checkbox u-form-group u-form-group-7">
+              <input type="checkbox" id="checkbox-18e2" name="feminino40" value="On">
+              <label for="checkbox-18e2" class="u-label"> Feminino&nbsp; 40+</label>
+            </div>
+            <div class="u-form-checkbox u-form-group u-form-group-8">
+              <input type="checkbox" id="checkbox-0be0" name="masculino40" value="On">
+              <label for="checkbox-0be0" class="u-label"> Masculino 40+</label>
+            </div>
+            <div class="u-form-checkbox u-form-group u-form-group-9">
+              <input type="checkbox" id="checkbox-a07d" name="feminino50" value="On">
+              <label for="checkbox-a07d" class="u-label"> Feminino&nbsp; 50+</label>
+            </div>
+            <div class="u-form-checkbox u-form-group u-form-group-10">
+              <input type="checkbox" id="checkbox-8577" name="masculino45" value="On">
+              <label for="checkbox-8577" class="u-label"> Masculino 45+</label>
+            </div>
+            <div class="u-align-right u-form-group u-form-submit">
+              <a href="#" class="u-btn u-btn-submit u-button-style u-btn-1">PRÓXIMO</a>
+              <input type="submit" value="submit" class="u-form-control-hidden">
             </div>
           </div>
         </div>
+        <a href="" class="u-btn u-button-style u-btn-2" onClick="window.print()" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">IMPRIMIR</a>
+        <a href="" class="u-btn u-button-style u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">ANTERIOR<br>
+        </a>
       </div>
     </section>
     
     
-<footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-79e0"><div class="u-clearfix u-sheet u-sheet-1">
+    <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-79e0"><div class="u-clearfix u-sheet u-sheet-1">
         <a href="https://nicepage.com" class="u-image u-logo u-image-1">
           <img src="images/default-logo.png" class="u-logo-image u-logo-image-1">
         </a>
@@ -192,6 +169,5 @@ var atletas = "<?php echo $atletas;?>";
 </g>
 </g></svg></span>
       </div></footer>
-
   </body>
 </html>

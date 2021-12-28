@@ -7,8 +7,11 @@
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <title>VisualizarAtleta</title>
+    <link rel="stylesheet" href="nicepage.css" media="print">
     <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="VisualizarAtleta.css" media="screen">
+	<link rel="stylesheet" href="VisualizarAtleta.css" media="print">
+	<link rel="stylesheet" href="VisualizarAtleta.css" media="screen">
+	<!--<link rel="stylesheet" type="text/css" media="print" href="VisualizarAtletaPrint.css"> -->
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 4.1.0, nicepage.com">
@@ -41,53 +44,41 @@
     <section class="u-clearfix u-section-1" id="sec-afae">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-form u-form-1">
-          <form action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
+          <div class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
             <div class="u-form-group u-form-name">
               <label for="name-f5dd" class="u-label">Nome do Atleta</label>
               <input type="text" id="name-f5dd" name="nomeatleta" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
             </div>
             <div class="u-form-group">
               <label for="email-f5dd" class="u-label">RG</label>
-              <input placeholder="Apenas Números" id="email-f5dd" name="rg" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" type="text">
+              <input placeholder="" id="email-f5dd" name="rg" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" type="text">
             </div>
-            <div class="u-form-date u-form-group u-form-group-3">
+            <div class="u-form-group u-form-group-3">
               <label for="date-6fc0" class="u-label">Data de Nascimento</label>
-              <input type="date" placeholder="DD/MM/YYYY" id="date-6fc0" name="datanascimento" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+              <input placeholder="" id="date-6fc0" name="datanascimento" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" type="text">
             </div>
-            <div class="u-form-group u-form-select u-form-group-4">
+            <div class="u-form-group u-form-group-3">
               <label for="select-a32d" class="u-label">Posição</label>
               <div class="u-form-select-wrapper">
-                <select id="select-a32d" name="select" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                  <option value="Goleiro">Goleiro</option>
-                  <option value="Armador Central">Armador Central</option>
-                  <option value="Armador Direito">Armador Direito</option>
-                  <option value="Armador Esquerdo">Armador Esquerdo</option>
-                  <option value="Ponta Direito">Ponta Direito</option>
-                  <option value="Ponta Esquerdo">Ponta Esquerdo</option>
-                  <option value="Pivô">Pivô</option>
-                </select>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                <input placeholder="" id="posicao" name="posicao" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" type="text">
               </div>
             </div>
             <div class="u-form-group u-form-group-5">
-              <label for="text-1751" class="u-label">Foto</label>
+              <label for="text-1751" class="u-label">Equipe</label>
               <input type="text" placeholder="" id="text-1751" name="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
             </div>
             <div class="u-align-right u-form-group u-form-submit">
-              <a href="#" class="u-btn u-btn-submit u-button-style u-btn-1">SALVAR<br>
+              <a href="#" class="u-btn u-btn-submit u-button-style u-btn-1"onClick="proximo()">PRÓXIMO<br>
               </a>
               <input type="submit" value="submit" class="u-form-control-hidden">
             </div>
-            <div class="u-form-send-message u-form-send-success"> Obrigado! A sua mensagem foi enviada. </div>
-            <div class="u-form-send-error u-form-send-message"> Não foi possível enviar a sua mensagem. Por favor, corrija os erros e tente novamente. </div>
-            <input type="hidden" value="" name="recaptchaResponse">
-          </form>
+          </div>
         </div>
-        <div class="u-custom-php u-custom-php-1" data-custom-php="<!--custom_php--><?php
-    echo &quot;Sample PHP&quot;;
-?><!--/custom_php-->"></div>
-        <a href="https://nicepage.com/c/technology-website-templates" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">ALTERAR</a>
+        <a href="" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-2"onClick="anterior()">ANTERIOR</a>
+        <a href="" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-3" onClick="window.print()">imprimir</a>
+        <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/profile1.png" alt="" data-image-width="208" data-image-height="242">
       </div>
+	  
     </section>
     
     
