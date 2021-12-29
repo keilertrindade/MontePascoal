@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$servername="localhost:3308";
+	$servername="localhost:3308";
 	$username="root";
 	$password="";
 	$database="montepascoal";
@@ -21,26 +21,37 @@ $resultequipe = $conn->query($sqlequipe);
 $equipes = $resultequipe->fetch_all(MYSQLI_ASSOC);
 
 $resultatletas = $conn->query($sqlatletas);
-$atletasequipe = $resultatletas->fetch_all(MYSQLI_ASSOC);
+//$atletasequipe = $resultatletas->fetch_all(MYSQLI_ASSOC);
 
 //var_dump($equipes);
 //var_dump($atletasequipe);
 
+mysqli_close($conn);
 
-$_SESSION['contador'] = 1;
+if (!isset($_SESSION['contadorEquipe'])) {
+    $_SESSION['contadorEquipe'] = 0;
+}
 
-$_SESSION['equipenome'] = $equipes[$_SESSION['contador']]['nome'];
-$_SESSION['equipeemail'] = $equipes[$_SESSION['contador']]['email'];
-$_SESSION['equipecidade'] = $equipes[$_SESSION['contador']]['cidade'];
-$_SESSION['equipeestado'] = $equipes[$_SESSION['contador']]['estado'];
-$_SESSION['equipenumeroatletas'] = $equipes[$_SESSION['contador']]['numeroatletas'];
 
-$_SESSION['fem30'] = (int) $equipes[$_SESSION['contador']]['fem30'];
-$_SESSION['fem40'] = (int) $equipes[$_SESSION['contador']]['fem40'];
-$_SESSION['fem50'] = (int) $equipes[$_SESSION['contador']]['fem50'];
-$_SESSION['mas35'] = (int) $equipes[$_SESSION['contador']]['mas35'];
-$_SESSION['mas40'] = (int) $equipes[$_SESSION['contador']]['mas40'];
-$_SESSION['mas45'] = (int) $equipes[$_SESSION['contador']]['mas45'];
+$_SESSION['equipenome'] = $equipes[$_SESSION['contadorEquipe']]['nome'];
+$_SESSION['equipeemail'] = $equipes[$_SESSION['contadorEquipe']]['email'];
+$_SESSION['equipecidade'] = $equipes[$_SESSION['contadorEquipe']]['cidade'];
+$_SESSION['equipeestado'] = $equipes[$_SESSION['contadorEquipe']]['estado'];
+$_SESSION['equipenumeroatletas'] = $equipes[$_SESSION['contadorEquipe']]['numeroatletas'];
+$_SESSION['equipenumeroequipe'] = $resultequipe->num_rows;
+
+$_SESSION['fem30'] = (int) $equipes[$_SESSION['contadorEquipe']]['fem30'];
+$_SESSION['fem40'] = (int) $equipes[$_SESSION['contadorEquipe']]['fem40'];
+$_SESSION['fem50'] = (int) $equipes[$_SESSION['contadorEquipe']]['fem50'];
+$_SESSION['mas35'] = (int) $equipes[$_SESSION['contadorEquipe']]['mas35'];
+$_SESSION['mas40'] = (int) $equipes[$_SESSION['contadorEquipe']]['mas40'];
+$_SESSION['mas45'] = (int) $equipes[$_SESSION['contadorEquipe']]['mas45'];
+
+//var_dump($_SESSION['equipenumeroequipe']);
+
+/* echo "<script>
+     	alert('Lista de equipes carregada!');
+	  </script>";  */
 
 
 //var_dump($_SESSION['fem30']); var_dump($_SESSION['fem40']); var_dump($_SESSION['fem50']); 

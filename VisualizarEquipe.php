@@ -20,6 +20,7 @@ include_once('php/gerarFichas.php');
 <link rel="stylesheet" href="VisualizarEquipe.css" media="print">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+	<script class="u-script" type="text/javascript" src="js/VisualizarEquipe.js" defer=""></script>
     <meta name="generator" content="Nicepage 4.1.0, nicepage.com">
     <link rel="icon" href="images/favicon.png">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
@@ -39,8 +40,6 @@ include_once('php/gerarFichas.php');
 }</script>
 <script type="text/javascript">
 window.onload = function(){
-	
-//window.location.reload(true);
 	
 var fem30 = parseInt("<?php echo $_SESSION['fem30'];?>");
 if (fem30 == 1){document.getElementById("checkbox-1dea").checked = true};
@@ -91,7 +90,7 @@ window.onunload = function(){
         <div class="u-form u-form-1">
           <div action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
             <div class="u-form-group u-form-name">
-              <label for="name-f5dd" class="u-label">Nome da Equipe</label>
+              <label for="name-f5dd" class="u-label">Nome da Equipe - <?php echo $_SESSION['equipenumeroatletas'];?> Atletas Cadastrados</label>
               <input type="text" id="name-f5dd" name="nomeequipe" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" value= "<?php echo $_SESSION['equipenome'];?>">
             </div>
             <div class="u-form-email u-form-group">
@@ -131,13 +130,13 @@ window.onunload = function(){
               <label for="checkbox-8577" class="u-label"> Masculino 45+</label>
             </div>
             <div class="u-align-right u-form-group u-form-submit">
-              <a href="#" class="u-btn u-btn-submit u-button-style u-btn-1">PRÓXIMO</a>
-              <input type="submit" value="submit" class="u-form-control-hidden">
+              <a class="u-btn u-btn-submit u-button-style u-btn-1" onclick="proximaEquipe()">PRÓXIMO</a>
+             
             </div>
           </div>
         </div>
         <a href="" class="u-btn u-button-style u-btn-2" onClick="window.print()" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">IMPRIMIR</a>
-        <a href="" class="u-btn u-button-style u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">ANTERIOR<br>
+        <a href="" class="u-btn u-button-style u-btn-3" onclick="anteriorEquipe()" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">ANTERIOR<br>
         </a>
       </div>
     </section>
