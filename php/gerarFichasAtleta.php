@@ -12,35 +12,51 @@ session_start();
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sqlequipe = "SELECT * FROM `equipe`";
+//$sqlequipe = "SELECT nome FROM `equipe` WHERE idequipe = equipe_idequipe";
 
 $sqlatletas = "SELECT * FROM `atletas`";
 
 
-$resultequipe = $conn->query($sqlequipe);
-$equipes = $resultequipe->fetch_all(MYSQLI_ASSOC);
+//$resultequipe = $conn->query($sqlequipe);
+//$equipes = $resultequipe->fetch_all(MYSQLI_ASSOC);
 
 $resultatletas = $conn->query($sqlatletas);
-//$atletasequipe = $resultatletas->fetch_all(MYSQLI_ASSOC);
-
+$atletasequipe = $resultatletas->fetch_all(MYSQLI_ASSOC);
+$_SESSION['atletanumeroatletas'] = $resultatletas->num_rows;
+//var_dump($_SESSION['atletanumeroatletas']);
 //var_dump($equipes);
 //var_dump($atletasequipe);
 
+if (!isset($_SESSION['contadorAtleta'])) {
+    $_SESSION['contadorAtleta'] = 0;		
+}
 
-$_SESSION['contador'] = 0;
+$_SESSION['atletanome'] = $atletasequipe[$_SESSION['contadorAtleta']]['nome'];
+$_SESSION['atletarg'] = $atletasequipe[$_SESSION['contadorAtleta']]['rg'];
+$_SESSION['atletanascimento'] = $atletasequipe[$_SESSION['contadorAtleta']]['datanascimento'];
+$_SESSION['atletaposicao'] = $atletasequipe[$_SESSION['contadorAtleta']]['posicao'];
+$idequipe = $atletasequipe[$_SESSION['contadorAtleta']]['equipe_idequipe'];
+$_SESSION['atletafoto'] = $atletasequipe[$_SESSION['contadorAtleta']]['foto'];
 
-$_SESSION['equipenome'] = $equipes[$_SESSION['contador']]['nome'];
-$_SESSION['equipeemail'] = $equipes[$_SESSION['contador']]['email'];
-$_SESSION['equipecidade'] = $equipes[$_SESSION['contador']]['cidade'];
-$_SESSION['equipeestado'] = $equipes[$_SESSION['contador']]['estado'];
-$_SESSION['equipenumeroatletas'] = $equipes[$_SESSION['contador']]['numeroatletas'];
 
-$_SESSION['fem30'] = (int) $equipes[$_SESSION['contador']]['fem30'];
-$_SESSION['fem40'] = (int) $equipes[$_SESSION['contador']]['fem40'];
-$_SESSION['fem50'] = (int) $equipes[$_SESSION['contador']]['fem50'];
-$_SESSION['mas35'] = (int) $equipes[$_SESSION['contador']]['mas35'];
-$_SESSION['mas40'] = (int) $equipes[$_SESSION['contador']]['mas40'];
-$_SESSION['mas45'] = (int) $equipes[$_SESSION['contador']]['mas45'];
+$sqlequipe = "SELECT nome FROM `equipe` WHERE idequipe = '$idequipe'";
+$nomeequipe = $conn->query($sqlequipe);
+
+/* var_dump($idequipe );
+var_dump($nomeequipe);
+ */
+$resultequipe = $nomeequipe->fetch_all(MYSQLI_ASSOC);
+
+$_SESSION['atletanomeequipe'] = $resultequipe[0]['nome'];
+
+/*var_dump($_SESSION['atletanomeequipe']);
+
+ var_dump($nomeequipe);
+var_dump($resultequipe);
+var_dump($_SESSION['atletanomeequipe']); */
+
+
+mysqli_close($conn);
 
 
 //var_dump($_SESSION['fem30']); var_dump($_SESSION['fem40']); var_dump($_SESSION['fem50']); 

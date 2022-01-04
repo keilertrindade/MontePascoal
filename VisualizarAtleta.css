@@ -45,6 +45,7 @@
   width: 208px;
   height: 242px;
   margin: -418px auto 60px 202px;
+  object-fit: fill;
 }
 
 @media (max-width: 1199px) {

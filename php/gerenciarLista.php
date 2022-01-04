@@ -33,5 +33,32 @@ if ($operacao == 'retrocederequipe'){
 }
 
 
+if ($operacao == 'avancaratleta'){
+	$_SESSION['contadorAtleta']++;	
+	
+	if ($_SESSION['contadorAtleta'] == $_SESSION['atletanumeroatletas']){
+		$_SESSION['contadorAtleta'] = 0;
+	}
+	
+	//var_dump($_SESSION['contadorEquipe']);
+
+	return true;
+}
+
+
+if ($operacao == 'retrocederatleta'){
+	
+	$_SESSION['contadorAtleta']--;	
+	
+	if ($_SESSION['contadorAtleta'] < 0) {
+		$_SESSION['contadorAtleta'] = ($_SESSION['atletanumeroatletas']-1);
+	}
+	
+	//var_dump($_SESSION['contadorAtleta']);
+	
+	return true;
+}
+
+
 
 ?>

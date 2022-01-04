@@ -12,21 +12,15 @@ session_start();
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sqlequipe = "SELECT * FROM `equipe`";
-
-$sqlatletas = "SELECT * FROM `atletas`";
-
-
-$resultequipe = $conn->query($sqlequipe);
-$equipes = $resultequipe->fetch_all(MYSQLI_ASSOC);
-
-$resultatletas = $conn->query($sqlatletas);
+	$sqlequipe = "SELECT * FROM `equipe`";
+	
+	$resultequipe = $conn->query($sqlequipe);
+	$equipes = $resultequipe->fetch_all(MYSQLI_ASSOC);
+	
 //$atletasequipe = $resultatletas->fetch_all(MYSQLI_ASSOC);
-
 //var_dump($equipes);
 //var_dump($atletasequipe);
 
-mysqli_close($conn);
 
 if (!isset($_SESSION['contadorEquipe'])) {
     $_SESSION['contadorEquipe'] = 0;
@@ -46,19 +40,13 @@ $_SESSION['fem50'] = (int) $equipes[$_SESSION['contadorEquipe']]['fem50'];
 $_SESSION['mas35'] = (int) $equipes[$_SESSION['contadorEquipe']]['mas35'];
 $_SESSION['mas40'] = (int) $equipes[$_SESSION['contadorEquipe']]['mas40'];
 $_SESSION['mas45'] = (int) $equipes[$_SESSION['contadorEquipe']]['mas45'];
-
-//var_dump($_SESSION['equipenumeroequipe']);
-
-/* echo "<script>
+mysqli_close($conn);
+/* var_dump($_SESSION['equipenumeroequipe']);
+ echo "<script>
      	alert('Lista de equipes carregada!');
-	  </script>";  */
-
-
-//var_dump($_SESSION['fem30']); var_dump($_SESSION['fem40']); var_dump($_SESSION['fem50']); 
-
+	  </script>";  
+var_dump($_SESSION['fem30']); var_dump($_SESSION['fem40']); var_dump($_SESSION['fem50']); 
 //Checkbox 0 = Falso/Nãomarcado, 1=Verdadeiro/Marcado
-
-
 //echo $_SESSION['equipenome'];
-//var_dump($_SESSION);
+//var_dump($_SESSION); */
 ?>
