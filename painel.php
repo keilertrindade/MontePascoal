@@ -69,7 +69,7 @@ var atletas = "<?php echo $atletas;?>";
   </head>
   <body class="u-body"><header class="u-clearfix u-header u-header" id="sec-1947"><div class="u-clearfix u-sheet u-sheet-1">
         <a href="inicio.html" class="u-image u-logo u-image-1">
-          <img src="images/default-logo.png" class="u-logo-image u-logo-image-1">
+          <img src="" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
@@ -91,10 +91,6 @@ var atletas = "<?php echo $atletas;?>";
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Página-Inicial.html">Página Inicial</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Sobre.html">Sobre</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html">Contact</a>
-</li></ul>
               </div>
             </div>
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
@@ -165,10 +161,9 @@ var atletas = "<?php echo $atletas;?>";
       </div>
     </section>
     
-    
 <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-79e0"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1">
-          <img src="images/default-logo.png" class="u-logo-image u-logo-image-1">
+        <a href="" class="u-image u-logo u-image-1">
+          <img src="" class="u-logo-image u-logo-image-1">
         </a>
         <p class="u-align-center-lg u-align-center-md u-align-center-xl u-text u-text-default u-text-1">Desenvolvido por Keiler Trindade</p>
         <div class="u-align-left u-social-icons u-spacing-10 u-social-icons-1">

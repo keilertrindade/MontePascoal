@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="Login.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+	<script class="u-script" type="text/javascript" src="js/login.js" defer=""></script>
     <meta name="generator" content="Nicepage 4.1.0, nicepage.com">
     <link rel="icon" href="images/favicon.png">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
@@ -67,16 +68,10 @@
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
         </nav>
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="80" data-image-height="40">
+        <a href="" class="u-image u-logo u-image-1" data-image-width="80" data-image-height="40">
           <img src="images/default-logo.png" class="u-logo-image u-logo-image-1">
         </a>
-        <div class="u-social-icons u-spacing-10 u-social-icons-1">
-          <a class="u-social-url" title="instagram" target="_blank" href="https://www.instagram.com/cdmontepascoalhandebol/"><span class="u-icon u-social-icon u-social-instagram u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-b59f"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-b59f"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M55.9,38.2c-9.9,0-17.9,8-17.9,17.9C38,66,46,74,55.9,74c9.9,0,17.9-8,17.9-17.9C73.8,46.2,65.8,38.2,55.9,38.2
-            z M55.9,66.4c-5.7,0-10.3-4.6-10.3-10.3c-0.1-5.7,4.6-10.3,10.3-10.3c5.7,0,10.3,4.6,10.3,10.3C66.2,61.8,61.6,66.4,55.9,66.4z"></path><path fill="#FFFFFF" d="M74.3,33.5c-2.3,0-4.2,1.9-4.2,4.2s1.9,4.2,4.2,4.2s4.2-1.9,4.2-4.2S76.6,33.5,74.3,33.5z"></path><path fill="#FFFFFF" d="M73.1,21.3H38.6c-9.7,0-17.5,7.9-17.5,17.5v34.5c0,9.7,7.9,17.6,17.5,17.6h34.5c9.7,0,17.5-7.9,17.5-17.5V38.8
-            C90.6,29.1,82.7,21.3,73.1,21.3z M83,73.3c0,5.5-4.5,9.9-9.9,9.9H38.6c-5.5,0-9.9-4.5-9.9-9.9V38.8c0-5.5,4.5-9.9,9.9-9.9h34.5
-            c5.5,0,9.9,4.5,9.9,9.9V73.3z"></path></svg></span>
-          </a>
-        </div>
+
       </div></header>
     <section class="u-align-center u-clearfix u-section-1" id="sec-abb4">
       <div class="u-clearfix u-sheet u-sheet-1">
@@ -90,10 +85,7 @@
               <label for="password-a30d" class="u-label">Senha</label>
               <input type="password" placeholder="Insira sua senha" id="password-a30d" name="password" class="u-grey-5 u-input u-input-rectangle u-input-2" required="">
             </div>
-            <div class="u-form-checkbox u-form-group">
-              <input type="checkbox" id="checkbox-a30d" name="remember" value="On">
-              <label for="checkbox-a30d" class="u-label">Relembre-me</label>
-            </div>
+
             <div class="u-align-left u-form-group u-form-submit">
               <a href="#" class="u-btn u-btn-submit u-button-style u-btn-1">Login</a>
               <input type="submit" value="submit" class="u-form-control-hidden">
@@ -101,15 +93,15 @@
             <input type="hidden" value="" name="recaptchaResponse">
           </form>
         </div>
-        <a href="#" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-button-style u-login-control u-login-forgot-password u-none u-text-palette-1-base u-btn-2">Esqueceu a senha ?</a>
+        <a href="#" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-button-style u-login-control u-login-forgot-password u-none u-text-palette-1-base u-btn-2" onclick="EsqueciSenha()">Esqueceu a senha ?</a>
         <a href="CadastroEquipe.html" data-page-id="958129823" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-button-style u-login-control u-login-create-account u-none u-text-palette-1-base u-btn-3">Ainda não cadastrou sua equipe ?</a>
       </div>
     </section>
     
     
     <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-79e0"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1">
-          <img src="images/default-logo.png" class="u-logo-image u-logo-image-1">
+		<a href="" class="u-image u-logo u-image-1">
+          <img src="" class="u-logo-image u-logo-image-1">
         </a>
         <p class="u-align-center-lg u-align-center-md u-align-center-xl u-text u-text-default u-text-1">Desenvolvido por Keiler Trindade</p>
         <div class="u-align-left u-social-icons u-spacing-10 u-social-icons-1">
